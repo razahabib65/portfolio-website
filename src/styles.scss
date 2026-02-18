@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'ngx-toastr/toastr';
+
+/* Custom Variables */
+
+:root {
+    --accent-primary: #6366f1;
+    --accent-secondary: #00f2ff;
+    --brand-dark: #020617;
+    --brand-light: #f8fafc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    @apply transition-colors duration-500 bg-brand-light dark:bg-brand-dark text-slate-900 dark:text-white;
+}
+
+/* Premium Border Utility (Solid) */
+.animated-border-container {
+    position: relative;
+    padding: 3px;
+    /* Enhanced for high visibility */
+    /* Thicker for visibility */
+    background: var(--accent-secondary);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    overflow: hidden;
+    display: block;
+}
+
+@keyframes border-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* Advanced Glassmorphism */
+.glass-premium {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-white/5;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Skill Bar Animations */
+.skill-bar-inner {
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-active .skill-bar-inner {
+    width: var(--percent);
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1) translateY(-50%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2) translateY(-50%);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

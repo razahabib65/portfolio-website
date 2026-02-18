@@ -1,0 +1,48 @@
+<section id="projects" class="py-24 bg-white dark:bg-slate-950 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-20" appReveal>
+            <div class="max-w-2xl">
+                <h2 class="text-brand-accent font-bold uppercase tracking-widest text-sm mb-4">Portfolio</h2>
+                <h3 class="text-4xl md:text-6xl font-display font-bold text-slate-900 dark:text-white leading-tight">
+                    Selected <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-brand-accent to-brand-neon">Architectures.</span>
+                </h3>
+            </div>
+
+            <!-- Filter Chips -->
+            <div class="flex flex-wrap gap-3">
+                @for (category of ['All', 'Mobile', 'Web', 'Fintech', 'Logistics']; track category) {
+                <button (click)="store.filterCategory(category)"
+                    class="px-5 py-2 rounded-full border text-xs font-bold uppercase tracking-widest transition-all duration-300"
+                    [class]="store.activeFilter() === category ? 
+                        'bg-brand-accent text-slate-950 border-brand-accent' : 
+                        'border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400'">
+                    {{ category }}
+                </button>
+                }
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @for (project of store.filteredProjects(); track project.id) {
+            <app-project-card [project]="project" appReveal></app-project-card>
+            }
+        </div>
+
+        <!-- View All Callout -->
+        <div class="mt-20 text-center" appReveal>
+            <p class="text-slate-500 mb-6 font-medium font-body leading-relaxed max-w-lg mx-auto">
+                Searching for something specific? I have a deep archive of enterprise source code and architecture
+                diagrams available for private review.
+            </p>
+            <a routerLink="/contact" class="inline-flex items-center gap-2 text-brand-accent font-bold group">
+                REQUEST FULL CATALOG
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

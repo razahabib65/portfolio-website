@@ -1,0 +1,8 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#020617"/>
+<rect x="100" y="100" width="600" height="400" rx="20" fill="#6366F1" fill-opacity="0.1"/>
+<circle cx="200" cy="200" r="40" fill="#00F2FF" fill-opacity="0.2"/>
+<rect x="280" y="180" width="300" height="20" rx="10" fill="#6366F1" fill-opacity="0.3"/>
+<rect x="280" y="220" width="200" height="20" rx="10" fill="#6366F1" fill-opacity="0.2"/>
+<text x="400" y="550" text-anchor="middle" fill="#6366F1" font-family="sans-serif" font-weight="bold" font-size="24" opacity="0.5">BOOKING SYSTEM</text>
+</svg>

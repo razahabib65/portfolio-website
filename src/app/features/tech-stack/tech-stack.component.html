@@ -1,0 +1,101 @@
+<section id="tech-stack" class="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div appReveal>
+                <h2 class="text-brand-accent font-bold uppercase tracking-widest text-sm mb-4">Core Competencies</h2>
+                <h3
+                    class="text-4xl md:text-6xl font-display font-bold leading-tight mb-8 text-slate-900 dark:text-white">
+                    The Modern <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-brand-accent to-brand-neon">Architect's</span>
+                    Toolkit.
+                </h3>
+                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-12">
+                    I specialize in building high-performance frontend architectures using a carefully curated stack
+                    designed for scalability, type safety, and exceptional developer experience. My expertise lies in
+                    orchestrating complex state and real-time data flows.
+                </p>
+
+                <div class="space-y-10" appReveal>
+                    @for (tech of techGroups; track tech.name) {
+                    <div class="group relative">
+                        <div class="flex justify-between items-end mb-3">
+                            <span class="text-slate-900 dark:text-white font-black tracking-tight text-sm uppercase">
+                                {{ tech.name }}
+                            </span>
+                            <div class="flex flex-col items-end">
+                                <span class="text-brand-accent text-[10px] font-black uppercase tracking-[0.2em]">
+                                    {{ tech.level }}
+                                </span>
+                                <span
+                                    class="text-slate-400 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                                    {{ tech.percentage }}% Mastery
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Premium Bar Container -->
+                        <div
+                            class="h-5 w-full bg-slate-200/50 dark:bg-white/5 rounded-full p-1.5 border border-slate-200 dark:border-white/10 overflow-hidden shadow-inner relative group-hover:border-brand-accent/30 transition-colors">
+                            <!-- Animated Glow (Behind) -->
+                            <div class="absolute inset-y-0 left-0 bg-brand-neon/10 blur-xl transition-all duration-[1.5s] ease-out w-0 opacity-0 [.reveal-active_&]:opacity-100 [.reveal-active_&]:w-[var(--percent)]"
+                                [style.--percent]="tech.percentage + '%'"></div>
+
+                            <!-- Actual Bar -->
+                            <div class="h-full bg-gradient-to-r from-brand-accent to-brand-neon rounded-full skill-bar-inner relative shadow-[0_0_20px_rgba(0,242,255,0.4)]"
+                                [style.--percent]="tech.percentage + '%'">
+
+                                <!-- Reflective Glint -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent rounded-full opacity-30">
+                                </div>
+
+                                <!-- Pulse Tip -->
+                                <div
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full blur-md animate-pulse-glow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="relative flex items-center justify-center p-6 md:p-12" appReveal>
+                <!-- Orbital Representation -->
+                <div
+                    class="relative w-full max-w-[280px] md:max-w-md aspect-square rounded-full border border-slate-200 dark:border-white/5 animate-slow-spin">
+                    <!-- Orbiting Icons -->
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                        <svg class="w-12 h-12 md:w-16 md:h-16 drop-shadow-[0_0_15px_rgba(226,50,55,0.4)]"
+                            viewBox="0 0 256 273" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 0L24.1 37.1l15.6 135.2L128 272.1l88.3-99.8 15.6-135.2L128 0z"
+                                fill="#E23237" />
+                            <path d="M128 30.6v210.3l64.3-72.7 13.5-117L128 30.6z" fill="#B52E31" />
+                            <path
+                                d="M128 123.6l-37.4 83.2h20.5l8.1-20.9h20.7l8.1 20.9h20.4l-40.4-83.2zm-9.3 46.1l9.3-24.1 9.3 24.1h-18.6z"
+                                fill="#FFF" />
+                        </svg>
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex items-center justify-center">
+                        <img src="assets/download (16).jpg" alt="Ionic"
+                            class="w-12 h-12 md:w-16 md:h-16 object-contain drop-shadow-[0_0_15px_rgba(56,128,255,0.4)]">
+                    </div>
+                </div>
+                <!-- Inner Core -->
+                <div
+                    class="absolute w-24 h-24 md:w-40 md:h-40 bg-brand-accent/20 blur-[60px] md:blur-[100px] rounded-full">
+                </div>
+                <div
+                    class="absolute w-24 h-24 md:w-32 md:h-32 bg-slate-50 dark:bg-slate-950 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-2xl z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-12 md:h-12 text-brand-accent"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
